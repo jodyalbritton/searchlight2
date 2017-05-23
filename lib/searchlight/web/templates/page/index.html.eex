@@ -1,0 +1,8 @@
+<div class="jumbotron">
+    <h1 class="text-center">Welcome to Searchlight!</h1>
+    <p class="text-center lead">A platform for test automation <br>Goes right above 9000.</p>
+    <p class="text-center">
+        <a class="btn btn-lg btn-primary" href="https://github.com/PhysicalGraph/searchlight.git" target="_blank" role="button"><i class="fa fa-github"></i> GitHub Docs</a>
+    </p>
+</div>
+</div> <!-- /container -->
