@@ -1,28 +1,35 @@
-<h2>Show Service</h2>
+<div class="row">
+  <div class="col col-sm-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+      </div>
+      <div class="panel-body">
+        <li>
+          <strong>Client:</strong>
+          <%= @service.client_id %>
+        </li>
 
+        <li>
+          <strong>Client secret:</strong>
+          <%= @service.client_secret %>
+        </li>
+
+        <li>
+          <strong>Auth token:</strong>
+          <%= @service.auth_token %>
+        </li>
+
+        <li>
+          <strong>Base uri:</strong>
+          <%= @service.base_uri %>
+        </li>
+
+      </ul>
+
+      <span><%= link "Edit", to: service_path(@conn, :edit, @service) %></span>
+      <span><%= link "Back", to: service_path(@conn, :index) %></span>
+      </div>
+    </div>
+  </div>
+</div>
 <ul>
-
-  <li>
-    <strong>Client:</strong>
-    <%= @service.client_id %>
-  </li>
-
-  <li>
-    <strong>Client secret:</strong>
-    <%= @service.client_secret %>
-  </li>
-
-  <li>
-    <strong>Auth token:</strong>
-    <%= @service.auth_token %>
-  </li>
-
-  <li>
-    <strong>Base uri:</strong>
-    <%= @service.base_uri %>
-  </li>
-
-</ul>
-
-<span><%= link "Edit", to: service_path(@conn, :edit, @service) %></span>
-<span><%= link "Back", to: service_path(@conn, :index) %></span>
