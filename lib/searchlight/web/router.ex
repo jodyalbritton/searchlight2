@@ -20,6 +20,11 @@ defmodule Searchlight.Web.Router do
     resources "/services", ServiceController
   end
 
+  scope "/api/v1", Searchlight.Web do
+      pipe_through :api # Use the default browser stack
+    resources "/events", EventController, except: [:new, :edit]
+  end
+
   # Other scopes may use custom stacks.
   # scope "/api", Searchlight.Web do
   #   pipe_through :api
