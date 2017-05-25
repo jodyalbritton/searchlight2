@@ -6,9 +6,15 @@ defmodule Searchlight.EventManagerTest do
   describe "events" do
     alias Searchlight.EventManager.Event
 
+<<<<<<< HEAD
     @valid_attrs %{capability: "some capability", current_iteration: 42, event_date: %DateTime{calendar: Calendar.ISO, day: 17, hour: 14, microsecond: {0, 6}, minute: 0, month: 4, second: 0, std_offset: 0, time_zone: "Etc/UTC", utc_offset: 0, year: 2010, zone_abbr: "UTC"}, latency: "some latency", passed: true, source: "some source", unixtime: 42, value: "some value"}
     @update_attrs %{capability: "some updated capability", current_iteration: 43, event_date: %DateTime{calendar: Calendar.ISO, day: 18, hour: 15, microsecond: {0, 6}, minute: 1, month: 5, second: 1, std_offset: 0, time_zone: "Etc/UTC", utc_offset: 0, year: 2011, zone_abbr: "UTC"}, latency: "some updated latency", passed: false, source: "some updated source", unixtime: 43, value: "some updated value"}
     @invalid_attrs %{capability: nil, current_iteration: nil, event_date: nil, latency: nil, passed: nil, source: nil, unixtime: nil, value: nil}
+=======
+    @valid_attrs %{capability: "some capability", current_iteration: 42, event_date: %DateTime{calendar: Calendar.ISO, day: 17, hour: 14, microsecond: {0, 6}, minute: 0, month: 4, second: 0, std_offset: 0, time_zone: "Etc/UTC", utc_offset: 0, year: 2010, zone_abbr: "UTC"}, source: "some source", unix_time: 42, value: "some value"}
+    @update_attrs %{capability: "some updated capability", current_iteration: 43, event_date: %DateTime{calendar: Calendar.ISO, day: 18, hour: 15, microsecond: {0, 6}, minute: 1, month: 5, second: 1, std_offset: 0, time_zone: "Etc/UTC", utc_offset: 0, year: 2011, zone_abbr: "UTC"}, source: "some updated source", unix_time: 43, value: "some updated value"}
+    @invalid_attrs %{capability: nil, current_iteration: nil, event_date: nil, source: nil, unix_time: nil, value: nil}
+>>>>>>> 994f7de165890167b2179a24826febe88ada0fad
 
     def event_fixture(attrs \\ %{}) do
       {:ok, event} =
@@ -34,10 +40,15 @@ defmodule Searchlight.EventManagerTest do
       assert event.capability == "some capability"
       assert event.current_iteration == 42
       assert event.event_date == %DateTime{calendar: Calendar.ISO, day: 17, hour: 14, microsecond: {0, 6}, minute: 0, month: 4, second: 0, std_offset: 0, time_zone: "Etc/UTC", utc_offset: 0, year: 2010, zone_abbr: "UTC"}
+<<<<<<< HEAD
       assert event.latency == "some latency"
       assert event.passed == true
       assert event.source == "some source"
       assert event.unixtime == 42
+=======
+      assert event.source == "some source"
+      assert event.unix_time == 42
+>>>>>>> 994f7de165890167b2179a24826febe88ada0fad
       assert event.value == "some value"
     end
 
@@ -52,10 +63,15 @@ defmodule Searchlight.EventManagerTest do
       assert event.capability == "some updated capability"
       assert event.current_iteration == 43
       assert event.event_date == %DateTime{calendar: Calendar.ISO, day: 18, hour: 15, microsecond: {0, 6}, minute: 1, month: 5, second: 1, std_offset: 0, time_zone: "Etc/UTC", utc_offset: 0, year: 2011, zone_abbr: "UTC"}
+<<<<<<< HEAD
       assert event.latency == "some updated latency"
       assert event.passed == false
       assert event.source == "some updated source"
       assert event.unixtime == 43
+=======
+      assert event.source == "some updated source"
+      assert event.unix_time == 43
+>>>>>>> 994f7de165890167b2179a24826febe88ada0fad
       assert event.value == "some updated value"
     end
 

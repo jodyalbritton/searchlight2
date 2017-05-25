@@ -18,8 +18,9 @@ defmodule Searchlight.Web.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
+    resources "/services", ServiceController
   end
-
+  
   scope "/api/v1", Searchlight.Web do
     pipe_through :api
     resources "/events", EventController, except: [:new, :edit]

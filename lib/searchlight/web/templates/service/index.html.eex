@@ -1,0 +1,40 @@
+<div class="row">
+  <div class="col col-sm-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <a class="btn btn-success pull-right" href="/services/new" style="position: relative; top: 5px;"><i class="fa fa-plus-circle"></i> Add New Account</a>
+        <h4>All SmartThings Accounts</h4>
+      </div>
+      <div class="panel-body">
+        <table class="table table-striped table-hover">
+          <thead>
+            <tr>
+              <th>Client</th>
+              <th>Client secret</th>
+              <th>Auth token</th>
+              <th>Base uri</th>
+
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+        <%= for service <- @services do %>
+            <tr>
+              <td><%= service.client_id %></td>
+              <td><%= service.client_secret %></td>
+              <td><%= service.auth_token %></td>
+              <td><%= service.base_uri %></td>
+
+              <td class="text-right">
+                <span><%= link "Show", to: service_path(@conn, :show, service), class: "btn btn-default btn-xs" %></span>
+                <span><%= link "Edit", to: service_path(@conn, :edit, service), class: "btn btn-default btn-xs" %></span>
+                <span><%= link "Delete", to: service_path(@conn, :delete, service), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
+              </td>
+            </tr>
+        <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
