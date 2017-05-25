@@ -11,12 +11,18 @@ defmodule Searchlight.Web.Router do
 
   pipeline :api do
     plug :accepts, ["json"]
+
   end
 
   scope "/", Searchlight.Web do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
+  end
+
+  scope "/api/v1", Searchlight.Web do
+    pipe_through :api
+    resources "/events", EventController, except: [:new, :edit]
   end
 
   # Other scopes may use custom stacks.
