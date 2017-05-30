@@ -17,12 +17,6 @@ defmodule Searchlight.Web.EventView do
       capability: event.capability,
       current_iteration: event.current_iteration,
       event_date: event.event_date,
-<<<<<<< HEAD
-      unixtime: event.unixtime,
-      latency: event.latency,
-      passed: event.passed}
-=======
       unix_time: event.unix_time}
->>>>>>> 994f7de165890167b2179a24826febe88ada0fad
   end
 end

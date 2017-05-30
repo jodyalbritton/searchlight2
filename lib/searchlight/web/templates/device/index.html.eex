@@ -1,0 +1,36 @@
+<div class="row">
+  <div class="col col-sm-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <a class="btn btn-success pull-right" href="/devices/new" style="position: relative; top: 5px;"><i class="fa fa-plus-circle"></i> Add New Device</a>
+        <h4>All Devices</h4>
+      </div>
+      <div class="panel-body">
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Label</th>
+            <th>Capabiltities</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <%= for device <- @devices do %>
+              <tr>
+                <td><%= device.name %></td>
+                <td><%= device.label %></td>
+                <td><%= device.capabiltities %></td>
+                <td class="text-right">
+                  <span><%= link "Show", to: device_path(@conn, :show, device), class: "btn btn-default btn-xs" %></span>
+                  <span><%= link "Edit", to: device_path(@conn, :edit, device), class: "btn btn-default btn-xs" %></span>
+                  <span><%= link "Delete", to: device_path(@conn, :delete, device), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
+                </td>
+              </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

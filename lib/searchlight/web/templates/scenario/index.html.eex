@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="col col-sm-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <a class="btn btn-success pull-right" href="/scenarios/new" style="position: relative; top: 5px;"><i class="fa fa-plus-circle"></i> Add New Scenario</a>
+        <h4>All Scenarios</h4>
+      </div>
+      <div class="panel-body">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <%= for scenario <- @scenarios do %>
+                <tr>
+                  <td><%= scenario.name %></td>
+                  <td class="text-right">
+                    <span><%= link "Show", to: scenario_path(@conn, :show, scenario), class: "btn btn-default btn-xs" %></span>
+                    <span><%= link "Edit", to: scenario_path(@conn, :edit, scenario), class: "btn btn-default btn-xs" %></span>
+                    <span><%= link "Delete", to: scenario_path(@conn, :delete, scenario), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
+                  </td>
+                </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

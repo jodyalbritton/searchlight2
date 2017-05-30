@@ -31,10 +31,10 @@
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <ul class="nav navbar-nav navbar-right">
-               <!-- <li><a href="/manage/bots">Bots</a></li>
-               <li><a href="/manage/devices">Devices</a></li>
-               <li><a href="/manage/tests">Tests</a></li>
-               <li><a href="/manage/scenarios">Scenarios</a></li> -->
+               <li><a href="/bots">Bots</a></li>
+               <li><a href="/devices">Devices</a></li>
+               <li><a href="/tests">Tests</a></li>
+               <li><a href="/scenarios">Scenarios</a></li>
                <li><a href="/services">Accounts</a></li>
             </ul>
           </ul>

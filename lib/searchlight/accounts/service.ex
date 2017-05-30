@@ -9,7 +9,7 @@ defmodule Searchlight.Accounts.Service do
     field :base_uri, :string
     field :client_id, :string
     field :client_secret, :string
-
+    has_many :devices, Searchlight.Accounts.Device
     timestamps()
   end
 

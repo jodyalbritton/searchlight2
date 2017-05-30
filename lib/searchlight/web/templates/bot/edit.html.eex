@@ -1,0 +1,6 @@
+<h2>Edit Bot</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action: bot_path(@conn, :update, @bot) %>
+
+<span><%= link "Back", to: bot_path(@conn, :index) %></span>

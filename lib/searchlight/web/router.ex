@@ -19,8 +19,12 @@ defmodule Searchlight.Web.Router do
 
     get "/", PageController, :index
     resources "/services", ServiceController
+    resources "/bots", BotController
+    resources "/devices", DeviceController
+    resources "/tests", TestController
+    resources "/scenarios", ScenarioController
   end
-  
+
   scope "/api/v1", Searchlight.Web do
     pipe_through :api
     resources "/events", EventController, except: [:new, :edit]

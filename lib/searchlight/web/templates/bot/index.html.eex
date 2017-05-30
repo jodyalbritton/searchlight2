@@ -1,0 +1,49 @@
+<div class="row">
+  <div class="col col-sm-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <a class="btn btn-success pull-right" href="/bots/new" style="position: relative; top: 5px;"><i class="fa fa-plus-circle"></i> Add New Bot</a>
+        <h4>All Bots</h4>
+      </div>
+      <div class="panel-body">
+
+        <table class="table table-striped table-hover">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Ip</th>
+              <th>Active</th>
+              <th>Created date</th>
+              <th>Published date</th>
+              <th>Active</th>
+              <th>Claim code</th>
+              <th>Capabilities</th>
+
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <%= for bot <- @bots do %>
+                <tr>
+                  <td><%= bot.name %></td>
+                  <td><%= bot.ip %></td>
+                  <td><%= bot.active %></td>
+                  <td><%= bot.created_date %></td>
+                  <td><%= bot.published_date %></td>
+                  <td><%= bot.active %></td>
+                  <td><%= bot.claim_code %></td>
+                  <td><%= bot.capabilities %></td>
+
+                  <td class="text-right">
+                    <span><%= link "Show", to: bot_path(@conn, :show, bot), class: "btn btn-default btn-xs" %></span>
+                    <span><%= link "Edit", to: bot_path(@conn, :edit, bot), class: "btn btn-default btn-xs" %></span>
+                    <span><%= link "Delete", to: bot_path(@conn, :delete, bot), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
+                  </td>
+                </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

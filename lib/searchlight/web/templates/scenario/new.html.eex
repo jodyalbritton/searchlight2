@@ -1,0 +1,6 @@
+<h2>New Scenario</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action: scenario_path(@conn, :create) %>
+
+<span><%= link "Back", to: scenario_path(@conn, :index) %></span>

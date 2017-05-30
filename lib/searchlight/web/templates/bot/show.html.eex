@@ -1,0 +1,48 @@
+<h2>Show Bot</h2>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @bot.name %>
+  </li>
+
+  <li>
+    <strong>Ip:</strong>
+    <%= @bot.ip %>
+  </li>
+
+  <li>
+    <strong>Active:</strong>
+    <%= @bot.active %>
+  </li>
+
+  <li>
+    <strong>Created date:</strong>
+    <%= @bot.created_date %>
+  </li>
+
+  <li>
+    <strong>Published date:</strong>
+    <%= @bot.published_date %>
+  </li>
+
+  <li>
+    <strong>Active:</strong>
+    <%= @bot.active %>
+  </li>
+
+  <li>
+    <strong>Claim code:</strong>
+    <%= @bot.claim_code %>
+  </li>
+
+  <li>
+    <strong>Capabilities:</strong>
+    <%= @bot.capabilities %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: bot_path(@conn, :edit, @bot) %></span>
+<span><%= link "Back", to: bot_path(@conn, :index) %></span>

@@ -68,4 +68,68 @@ defmodule Searchlight.AccountsTest do
       assert %Ecto.Changeset{} = Accounts.change_service(service)
     end
   end
+
+  describe "devices" do
+    alias Searchlight.Accounts.Device
+
+    @valid_attrs %{capabiltities: %{}, label: "some label", name: "some name"}
+    @update_attrs %{capabiltities: %{}, label: "some updated label", name: "some updated name"}
+    @invalid_attrs %{capabiltities: nil, label: nil, name: nil}
+
+    def device_fixture(attrs \\ %{}) do
+      {:ok, device} =
+        attrs
+        |> Enum.into(@valid_attrs)
+        |> Accounts.create_device()
+
+      device
+    end
+
+    test "list_devices/0 returns all devices" do
+      device = device_fixture()
+      assert Accounts.list_devices() == [device]
+    end
+
+    test "get_device!/1 returns the device with given id" do
+      device = device_fixture()
+      assert Accounts.get_device!(device.id) == device
+    end
+
+    test "create_device/1 with valid data creates a device" do
+      assert {:ok, %Device{} = device} = Accounts.create_device(@valid_attrs)
+      assert device.capabiltities == %{}
+      assert device.label == "some label"
+      assert device.name == "some name"
+    end
+
+    test "create_device/1 with invalid data returns error changeset" do
+      assert {:error, %Ecto.Changeset{}} = Accounts.create_device(@invalid_attrs)
+    end
+
+    test "update_device/2 with valid data updates the device" do
+      device = device_fixture()
+      assert {:ok, device} = Accounts.update_device(device, @update_attrs)
+      assert %Device{} = device
+      assert device.capabiltities == %{}
+      assert device.label == "some updated label"
+      assert device.name == "some updated name"
+    end
+
+    test "update_device/2 with invalid data returns error changeset" do
+      device = device_fixture()
+      assert {:error, %Ecto.Changeset{}} = Accounts.update_device(device, @invalid_attrs)
+      assert device == Accounts.get_device!(device.id)
+    end
+
+    test "delete_device/1 deletes the device" do
+      device = device_fixture()
+      assert {:ok, %Device{}} = Accounts.delete_device(device)
+      assert_raise Ecto.NoResultsError, fn -> Accounts.get_device!(device.id) end
+    end
+
+    test "change_device/1 returns a device changeset" do
+      device = device_fixture()
+      assert %Ecto.Changeset{} = Accounts.change_device(device)
+    end
+  end
 end

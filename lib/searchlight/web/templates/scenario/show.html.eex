@@ -1,0 +1,13 @@
+<h2>Show Scenario</h2>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @scenario.name %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: scenario_path(@conn, :edit, @scenario) %></span>
+<span><%= link "Back", to: scenario_path(@conn, :index) %></span>
