@@ -18,6 +18,9 @@ defmodule Searchlight.Web.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
+
+    resources "/sessions", SessionController, only: [:new]
+    resources "/users", UserController
     resources "/services", ServiceController
     resources "/bots", BotController
     resources "/devices", DeviceController
